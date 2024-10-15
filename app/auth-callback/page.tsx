@@ -3,8 +3,9 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { trpc } from "../_trpc/client";
+import { Suspense } from "react";
 
-const Page = () => {
+const AuthCallbackPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const origin = searchParams.get("origin");
@@ -35,5 +36,11 @@ const Page = () => {
 
   return null; // Return null if no loading or redirecting logic is active
 };
+
+const Page = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <AuthCallbackPage />
+  </Suspense>
+);
 
 export default Page;
