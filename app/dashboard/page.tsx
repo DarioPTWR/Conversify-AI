@@ -1,8 +1,9 @@
 import Dashboard from '@/components/Dashboard'
 import { db } from '@/db'
-import { getUserSubscriptionPlan } from '@/lib/stripe';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import { redirect } from 'next/navigation'
+
+export const dynamic = 'force-dynamic'; // Force dynamic rendering
 
 const Page = async () => {
   const { getUser } = getKindeServerSession()
@@ -14,17 +15,15 @@ const Page = async () => {
 
   const dbUser = await db.user.findFirst({
     where: {
-      id: (await user).id
+      id: user.id
     }
   })
 
   if (!dbUser) {
     redirect('/auth-callback?origin=dashboard')
   }
-
-  const subscriptionPlan = await getUserSubscriptionPlan()
   
-  return <Dashboard subscriptionPlan={subscriptionPlan}/>
+  return <Dashboard />
 }
 
 export default Page

@@ -99,14 +99,8 @@ export default function Home() {
                 Sign up for an account
               </span>
               <span className='mt-2 text-zinc-700'>
-                Either starting out with a free plan or
-                unlock more features with our{' '}
-                <Link
-                  href='/pricing'
-                  className='text-blue-700 underline underline-offset-2'>
-                  pro plan
-                </Link>
-                .
+                Start out with a free plan or
+                unlock more features with our pro plan (coming soon)!
               </span>
             </div>
           </li>

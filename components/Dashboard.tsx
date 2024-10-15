@@ -10,13 +10,8 @@ import UploadButton from './UploadButton'
 import { Plus, MessageSquare, Loader2, Trash, Ghost } from 'lucide-react'
 import Skeleton from 'react-loading-skeleton'
 import {format} from "date-fns"
-import { getUserSubscriptionPlan } from '@/lib/stripe'
 
-interface PageProps {
-  subscriptionPlan: Awaited<ReturnType<typeof getUserSubscriptionPlan>>
-}
-
-const Dashboard = ({subscriptionPlan}: PageProps) => {
+const Dashboard = () => {
   const utils = trpc.useContext()
 
   const [currentlyDeletingFile, setCurrentlyDeletingFile] =
@@ -46,7 +41,7 @@ const Dashboard = ({subscriptionPlan}: PageProps) => {
           View All Files
         </h1>
 
-        <UploadButton isSubscribed={subscriptionPlan.isSubscribed} />
+        <UploadButton />
       </div>
 
       {/* display all user files */}
