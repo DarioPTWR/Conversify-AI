@@ -12,7 +12,7 @@ import MobileNav from './MobileNav'
 
 const Navbar = async () => {
   const { getUser } = getKindeServerSession()
-  const user = getUser()
+  const user = await getUser() // Await the getUser() function
 
   return (
     <nav className='sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
@@ -65,12 +65,12 @@ const Navbar = async () => {
 
                 <UserAccountNav
                   name={
-                    !(await user).given_name || !(await user).family_name
+                    !user.given_name || !user.family_name
                       ? 'Your Account'
-                      : `${(await user).given_name} ${(await user).family_name}`
+                      : `${user.given_name} ${user.family_name}`
                   }
-                  email={(await user).email ?? ''}
-                  imageUrl={(await user).picture ?? ''}
+                  email={user.email ?? ''}
+                  imageUrl={user.picture ?? ''}
                 />
               </>
             )}
