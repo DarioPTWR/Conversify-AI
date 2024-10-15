@@ -8,7 +8,7 @@ Nexus is an AI-powered tool that quickly finds and retrieves insights from your 
 - 🛠️ **Complete SaaS Built From Scratch**: Nexus is a full-fledged SaaS platform.
 - 💻 **Beautiful Landing Page & Pricing Page**: Stunning landing page with integrated pricing plans.
 - 🔒 **Authentication Using Kinde**: Secure login and user management via Kinde.
-- 💳 **Free & Pro Plan Using Stripe**: Supports different subscription tiers using Stripe.
+- 💳 **Free & Pro Plan Using Stripe**: Supports different subscription tiers using Stripe. **[COMING SOON]**
 - ⚡ **Infinite Message Loading for Performance**: Optimized loading for smooth and fast messaging.
 - 📄 **Beautiful PDF Viewer**: A sleek, functional PDF viewer to navigate your documents.
 - 🔄 **Streaming API Responses in Real-Time**: Get real-time responses from AI queries.
