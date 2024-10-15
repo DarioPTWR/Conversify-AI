@@ -24,6 +24,15 @@ const nextConfig = {
       config.resolve.alias.encoding = false
       return config
     },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'gravatar.com',
+          pathname: '/**',
+        },
+      ],
+    },
 };
 
 export default nextConfig;
