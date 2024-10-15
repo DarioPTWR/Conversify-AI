@@ -9,7 +9,8 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
   typescript: true,
 })
 
-export async function getUserSubscriptionPlan() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function getUserSubscriptionPlan(id?: string) {
   const { getUser } = getKindeServerSession()
   const user = getUser()
 
