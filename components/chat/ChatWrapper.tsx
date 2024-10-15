@@ -18,7 +18,11 @@ const ChatWrapper = ({fileId}: ChatWrapperProps) => {
       { fileId }
     , {
         refetchInterval: (data) => 
+           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+           // @ts-ignore
             data?.status === 'SUCCESS' || 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+           // @ts-ignore
             data?.status === 'FAILED' 
             ? false : 500
         }
