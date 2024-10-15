@@ -89,7 +89,7 @@ export const POST = async (req: NextRequest) => {
         role: 'system',
         content: `
           You are an assistant that helps users by retrieving and using specific context to answer their questions. 
-          If the context provides enough information, give a clear and concise response. If the context is insufficient, say "I don't know."
+          If the context provides enough information, give a clear and concise response. If the context is insufficient, say "This document does not provide enough information for that question."
           Always provide answers based on the context below. Do not hallucinate information.
           Format the response in markdown.
         `,

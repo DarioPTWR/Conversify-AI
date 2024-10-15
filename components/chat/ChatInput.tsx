@@ -27,7 +27,7 @@ const ChatInput = ({ isDisabled }: ChatInputProps) => {
               <Textarea
                 rows={1}
                 ref={textareaRef}
-                maxRows={4}
+                maxRows={2}
                 autoFocus
                 onChange={handleInputChange}
                 value={message}
@@ -41,12 +41,13 @@ const ChatInput = ({ isDisabled }: ChatInputProps) => {
                   }
                 }}
                 placeholder='Enter your question...'
-                className='resize-none pr-12 text-base py-3 scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch'
+                className='resize-none pr-16 text-base py-3 scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch rounded-lg'
               />
 
+              {/* Centered the button vertically and aligned to the right */}
               <Button
                 disabled={isLoading || isDisabled}
-                className='absolute bottom-1 right-[8px] rounded'
+                className='absolute right-[8px] top-1/2 transform -translate-y-1/2 rounded' // Center vertically
                 aria-label='send message'
                 onClick={() => {
                   addMessage()

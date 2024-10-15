@@ -100,7 +100,7 @@ export default function Home() {
               </span>
               <span className='mt-2 text-zinc-700'>
                 Start out with a free plan or
-                unlock more features with our pro plan (coming soon)!
+                unlock more features with our pro plan <span className="text-blue-600">(coming soon)</span>!
               </span>
             </div>
           </li>
