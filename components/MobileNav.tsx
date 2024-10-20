@@ -12,15 +12,16 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
 
   const pathname = usePathname()
 
+  // Close the menu when the pathname changes
   useEffect(() => {
-    if (isOpen) toggleOpen()
-  }, [isOpen, pathname])
+    if (isOpen) setOpen(false);
+  }, [pathname]);
 
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
-      toggleOpen()
+      setOpen(false); // Close the menu if navigating to the current route
     }
-  }
+  };
 
   return (
     <div className='sm:hidden'>

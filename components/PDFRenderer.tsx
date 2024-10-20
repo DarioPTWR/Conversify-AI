@@ -4,7 +4,7 @@ import {
   ChevronDown,
   ChevronUp,
   Loader2,
-  RotateCw,
+  // RotateCw,
   Search,
 } from 'lucide-react'
 import { Document, Page, pdfjs } from 'react-pdf'
@@ -45,7 +45,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
   const [numPages, setNumPages] = useState<number>()
   const [currPage, setCurrPage] = useState<number>(1)
   const [scale, setScale] = useState<number>(1)
-  const [rotation, setRotation] = useState<number>(0)
+  // const [rotation, setRotation] = useState<number>(0)
   const [renderedScale, setRenderedScale] = useState<
     number | null
   >(null)
@@ -89,7 +89,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
 
   return (
     <div className='w-full bg-white rounded-md shadow flex flex-col items-center'>
-      <div className='h-14 w-full border-b border-zinc-200 flex items-center justify-between px-2'>
+      <div className='h-14 w-full border-b border-zinc-200 flex items-center justify-between px-2 pr-8 sm:pr-0'>
         <div className='flex items-center gap-1.5'>
           <Button
             disabled={currPage <= 1}
@@ -140,11 +140,11 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
           </Button>
         </div>
 
-        <div className='space-x-2'>
+        <div className='sm:flex flex space-x-2'>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
-                className='gap-1.5'
+                className='gap-1.5 px-2 sm:px-6'
                 aria-label='zoom'
                 variant='ghost'>
                 <Search className='h-4 w-4' />
@@ -172,12 +172,12 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button
+          {/* <Button
             onClick={() => setRotation((prev) => prev + 90)}
             variant='ghost'
             aria-label='rotate 90 degrees'>
-            <RotateCw className='h-4 w-4' />
-          </Button>
+            <RotateCw className='h-4 w-4 hidden' />
+          </Button> */}
 
           <PdfFullscreen fileUrl={url} />
         </div>
@@ -211,7 +211,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
                   width={width ? width : 1}
                   pageNumber={currPage}
                   scale={scale}
-                  rotate={rotation}
+                  // rotate={rotation}
                   key={'@' + renderedScale}
                 />
               ) : null}
@@ -221,7 +221,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
                 width={width ? width : 1}
                 pageNumber={currPage}
                 scale={scale}
-                rotate={rotation}
+                // rotate={rotation}
                 key={'@' + scale}
                 loading={
                   <div className='flex justify-center'>

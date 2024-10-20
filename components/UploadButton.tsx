@@ -91,6 +91,7 @@ const UploadDropzone = () => {
           <div {...getRootProps()} className='border h-64 m-4 border-dashed border-gray-300 rounded-lg'>
             <div className='flex items-center justify-center h-full w-full'>
                 <label
+                
                 htmlFor='dropzone-file'
                 className='flex flex-col items-center justify-center w-full h-full rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100'>
                 <div className='flex flex-col items-center justify-center pt-5 pb-6'>
@@ -148,7 +149,7 @@ const UploadDropzone = () => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className="rounded">Upload PDF Document</Button>
+                <Button className="rounded py-2">Upload PDF Document</Button>
             </DialogTrigger>
             <DialogContent>
                 <UploadDropzone />
